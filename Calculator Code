@@ -1,0 +1,53 @@
+# The following 5 lines are user Greeting, and usage instructions, these are only printed once, at the start of the program 
+print("Hello! There")
+print("Welcome to Calculator")
+print("We currently provide calculation in 4 operations")
+print("Type one of the following \n'+' for Addition\n'-' for Subtraction\n'*' for Multiplication\n'/' for Division")
+print("We currently provide calculation in 4 operations")
+
+# Making the calculator function for easy calling for user input loop.
+def calculator():  # calculator function
+    opr = input("Which operation do you want to handle: ")
+
+    if opr == '+':
+        num1 = float(input("Enter first Number  :"))
+        num2 = float(input("Enter second Number :"))
+        total = num1 + num2
+
+        print(f"\nThe Total is :{total}")
+
+    elif opr == '-':
+        num1 = float(input("Enter first Number  :"))
+        num2 = float(input("Enter second Number :"))
+        difference = num1 - num2
+
+        print(f"\nThe Difference is :{difference}")
+
+    elif opr == '*':
+        num1 = float(input("Enter first Number  :"))
+        num2 = float(input("Enter second Number :"))
+        product = num1*num2
+
+        print(f"\nThe Product is :{product}")
+
+    elif opr == '/':
+        num1 = float(input("Enter first Number  :"))
+        num2 = float(input("Enter second Number :"))
+
+        if num2 == 0:
+            print("Error: Division by 0 is not allowed.")
+        else:
+            quotient = num1/num2
+            remainder = num1 % num2
+            print(f"\nThe Divident is  :{quotient}")
+            print(f"The Remainder is :{remainder}")
+
+    else:
+        print("\nInvalid operator, or not yet developed")
+
+# The following 5 lines dont exactly loop, but keeps the function called until the condition is satisfied. Works like a loop.
+while True:  
+    calculator()
+    again = input("want to do another calculation? (y/n)")
+    if again.lower() != 'y':
+        break
